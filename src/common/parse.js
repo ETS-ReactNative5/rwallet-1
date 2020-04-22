@@ -312,8 +312,7 @@ class ParseHelper {
 
     for (let i = 0; i < count; i += eachQueryLimit) {
       tasks.push(async () => {
-        const clonedQuery = _.clone(parseQuery);
-        const records = await clonedQuery
+        const records = await parseQuery
           .skip(i)
           .limit(eachQueryLimit)
           .find();
